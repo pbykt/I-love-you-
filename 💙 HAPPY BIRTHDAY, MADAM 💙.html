@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> 💙 HAPPY BIRTHDAY, MADAM 💙 </title>
+  <style>
+   body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+/* Background */
+body {
+  background: radial-gradient(circle, rgb(32, 41, 65) 0%, rgb(10, 10, 10) 100%);
+  color: #fff;
+}
+
+ /* Kiss mark styling */
+ .kiss-mark {
+      font-size: 10px;
+      position: absolute;
+      right: 90%;
+      bottom: 5%;
+      transform: translateX(-40%);
+      cursor: pointer;
+      z-index: 4;
+      transition: transform 0.8s ease;
+    }
+
+    .kiss-mark:hover {
+      transform: translateX(-40%) scale(1.5);
+    }
+
+    /* Message box styling */
+    .message-box {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.9);
+      border: 2px solid rgb(63, 63, 63);
+      padding: 40px;
+      border-radius: 20px;
+      display: none;
+      text-align: center;
+      width: 300px;
+    }
+
+    #close-button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: rgb(77, 77, 77);
+      color: black;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    #close-button:hover {
+      background-color: orange;
+    }
+
+    /* Shimmering Stars */
+.star {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: transparent;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  background: radial-gradient(circle, #ffec5c 30%, #ffe347 80%);
+  animation: shimmer 3s infinite alternate ease-in-out;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px 5px #fffbba, 0 0 20px 10px #ffe373;
+  }
+  50% {
+    transform: scale(1.4);
+    box-shadow: 0 0 20px 10px #fff68f, 0 0 30px 15px #ffe28a;
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px 5px #fffbba, 0 0 20px 10px #ffe373;
+  }
+}
+
+    /* Moon */
+    .moon {
+      position: absolute;
+      top: 15%;
+      left: 70%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: rgb(248, 240, 240);
+      opacity: 8;
+      box-shadow: 0px 0px 30px 15px rgba(255, 255, 255, 0.658);
+      z-index: 3;
+      animation: floatMoon 8s infinite ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @keyframes floatMoon {
+      0%, 100% {
+        transform: translate(-50%, -48%);
+      }
+      50% {
+        transform: translate(-50%, -52%);
+      }
+    }
+
+    /* Inner shimmering star inside the moon */
+    .moon .inner-star {
+      width: 10px;
+      height: 10px;
+      clip-path: polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        21% 91%,
+        32% 57%,
+        2% 35%,
+        39% 35%
+      );
+      background: radial-gradient(circle, #ffe373 30%, #fcdb57 70%);
+      animation: shimmer 6s infinite alternate ease-in-out;
+    }
+    
+    @keyframes shimmer {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 10px 5px #fffbba, 0 0 20px 10px #ffe373;
+      }
+      50% {
+        transform: scale(1.5);
+        box-shadow: 0 0 15px 8px #fff68f, 0 0 25px 12px #ffe28a;
+      }
+      100% {
+        transform: scale(2);
+        box-shadow: 0 0 10px 5px #fffbba, 0 0 20px 10px #ffe373;
+      }
+    }
+
+    /* Minimal background stars */
+.background-star {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: transparent;
+  clip-path: polygon(
+    0% 50%,
+    35% 61%,
+    35% 98%,
+    57% 68%,
+    91% 79%,
+    70% 50%,
+    91% 21%,
+    57% 32%,
+    35% 2%,
+    35% 39%
+  );
+  background: radial-gradient(circle, #a6d4fa 50%, #66b2f5 80%);
+  animation: twinkle 3s infinite alternate ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(2);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.4);
+  }
+}
+
+    .comet {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle, #fff 30%, rgba(255, 255, 255, 0) 80%);
+  border-radius: 50%;
+  box-shadow: -20px -20px 40px rgba(255, 255, 255, 0.8);
+  animation: moveComet 6s infinite linear;
+}
+
+.comet::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.6), transparent);
+  transform-origin: right;
+  animation: trailFade 6s infinite linear;
+}
+
+@keyframes moveComet {
+  0% {
+    transform: translate(-10%, -10%) rotate(45deg);
+  }
+  100% {
+    transform: translate(110%, 110%) rotate(45deg);
+  }
+}
+
+@keyframes trailFade {
+  0% {
+    opacity: 1;
+    width: 150px;
+  }
+  100% {
+    opacity: 0;
+    width: 0;
+  }
+}
+
+    @keyframes moveComet {
+      0% {
+        transform: translate(-10%, -10%) rotate(45deg);
+      }
+      100% {
+        transform: translate(110%, 110%) rotate(45deg);
+      }
+    }
+
+    /* Background Stars */
+    .background-star {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: transparent;
+      clip-path: polygon(
+        0% 50%,
+        35% 61%,
+        35% 98%,
+        57% 68%,
+        91% 79%,
+        70% 50%,
+        91% 21%,
+        57% 32%,
+        35% 2%,
+        35% 39%
+      );
+      background: radial-gradient(circle, #a6d4fa 50%, #66b2f5 80%);
+      animation: twinkle 3s infinite alternate ease-in-out;
+    }
+
+      /* Message box */
+      .message-box {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.9);
+      border: 2px solid rgb(255, 255, 255);
+      padding: 40px;
+      border-radius: 20px;
+      display: none;
+      text-align: center;
+      width: 300px;
+    }
+
+    #close-button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: rgb(255, 187, 0);
+      color: black;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    #close-button:hover {
+      background-color: rgb(206, 206, 206);
+    }
+
+  </style>
+</head>
+<body>
+    <div class="stars-container">
+        <div class="comet"></div>
+        <div class="moon">
+            <div class="inner-star"></div> <!-- Move this here -->
+        </div>
+        <!-- Stars will be added dynamically here -->
+        <div class="star"></div>  
+</div>
+
+ <!-- Kiss Mark -->
+ <div class="kiss-mark" id="kiss-mark">💋</div>
+
+
+ <!-- Message box that will display the message -->
+ <div class="message-box" id="message-box">
+     <p id="message"></p>
+     <button id="close-button">Close</button>
+ </div>
+
+<!-- Message box that will display the message -->
+<div class="message-box" id="message-box">
+    <p id="message"></p>
+    <button id="close-button">Close</button>
+</div>
+      <script>
+        const messages = [
+          "I love everything about you ♡",
+          "Believe in yourself ♡",
+          "Congratulations on your incredible success! I always knew you could do it, and I'm incredibly proud of you ♡",
+          "You are my happy place ♡",
+          "I'll always wait for you, no matter how long it takes, because you're worth every moment. ♡",
+          "You are so amazing ♡",
+          "Never give up, stay on your lane, love ♡",
+          "I am your number one fan in everything ♡",
+          "You’ve got this ♡",
+          "Keep smiling, I love your face when you're smiling ♡",
+          "You are so beautiful, my love ♥︎.",
+          "I am so lucky to love you ♡",
+          "Success is near, trust the process ♡",
+          "I'll make myself better to prove my love for you ♥︎",
+          "I'll always spoiled with pure love and care ♥︎",
+          "Be kind to yourself ♥︎",
+          "I'll always spoiled with what you want ♥︎",
+          "Every day is a chance ♥︎",
+          "I will heal myself to give the best version of myself ♥︎",
+          "Follow your heart ♡",
+          "Great things take time ♡",
+          "Keep going, my madam ♡",
+          "I'll always make you proud ♡",
+          "I love you in all ways ♥︎",
+          "I am so in love with you ♥︎",
+          "You are loved ♡",
+          "You are my favorite place ♥︎",
+          "The best is yet to come ♥︎",
+          "You are so much more ♥︎",
+          "I'll always support you ♥︎",
+          "I am so proud of you, you can do it, madam ♥︎",
+          "I will always choose you ♥︎",
+          "I love you infinitely ♥︎",
+          "You are such a hardworking and dedicated woman, and I truly admire your commitment and strength ♥︎",
+          "I miss you every single day ♥︎",
+          "I'll buy you cigarettes and ice cream ♥︎",
+          "You'll always have me specially at your worst ♥︎",
+          "I’ll always make an effort just for you, my madam ♥︎",
+          "I can and I will for you—just trust me, this time I’ll get it right ♥︎",
+          "You're so special to me ♥︎",
+          "I LOVE YOU SO MUCH, MADAM ♥︎!"
+          
+        ];
+    
+        const starsContainer = document.querySelector(".stars-container");
+        
+
+        // Create shimmering clickable stars
+        for (let i = 0; i < messages.length; i++) {
+          const star = document.createElement("div");
+          star.classList.add("star");
+          star.setAttribute("data-message", messages[i]);
+          star.style.left = `${Math.random() * 80 + 10}%`;
+          star.style.top = `${Math.random() * 80 + 10}%`;
+          starsContainer.appendChild(star);
+        }
+    
+        // Create minimal background stars
+        for (let i = 0; i < 100; i++) {
+          const backgroundStar = document.createElement("div");
+          backgroundStar.classList.add("background-star");
+          backgroundStar.style.left = `${Math.random() * 100}%`;
+          backgroundStar.style.top = `${Math.random() * 100}%`;
+          starsContainer.appendChild(backgroundStar);
+        }
+    
+        
+        // Show message on star click
+        const messageBox = document.getElementById("message-box");
+        const message = document.getElementById("message");
+        const closeButton = document.getElementById("close-button");
+    
+        starsContainer.addEventListener("click", (event) => {
+          if (event.target.classList.contains("star")) {
+            const starMessage = event.target.getAttribute("data-message");
+            message.textContent = starMessage;
+            messageBox.style.display = "block";
+          }
+        });
+    
+        // Kiss mark click functionality
+        const kissMark = document.getElementById("kiss-mark");
+        kissMark.addEventListener("click", () => {
+          message.textContent = "This isn’t much, but I just want to express how truly important and valuable you are to me. It’s a small message to show my admiration and appreciation for you as an incredible person. I hope you appreciate my little effort for you, hope you like it mwaaaaaaaa 💋 -Phoebe Kate!";
+          messageBox.style.display = "block";
+        });
+
+        // Add click functionality to the moon
+        const moon = document.querySelector(".moon");
+        moon.addEventListener("click", () => {
+          message.textContent = "Happy Birthday, Madam! Enjoy doing what's best for you and what your heart truly desires. I'm always here to listen in all your rants and to support you, stay kind and humble. Wishing you a day filled with joy and a year ahead filled with exciting full of opportunities and success. You are such a hardworking and incredible person. I’m always rooting for you as you chase your dreams. I truly hope this year brings you happiness, growth, and everything you deserve. stay safe always! I love youuuuu so much madam, Again Happy Happy Birthday ♥︎ ";
+          messageBox.style.display = "block";
+        });
+    
+        // Close the message box
+        closeButton.addEventListener("click", () => {
+          messageBox.style.display = "none";
+        });
+
+        
+      </script>
+    </body>
+    </html>
+    
+
